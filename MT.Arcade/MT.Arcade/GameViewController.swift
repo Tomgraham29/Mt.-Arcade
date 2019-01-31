@@ -59,7 +59,7 @@ class GameViewController: UIViewController {
         headsTails = getRando()
         if !headsTails {
             print("Correeccccttttt")
-            totalCorrect = totalCorrect + 1
+            totalCorrect += 1
             let totalPrint = String(totalCorrect)
             titties.text = totalPrint
             damn.text = "It was Tails!"
@@ -73,6 +73,8 @@ class GameViewController: UIViewController {
             
         }
     }
+    
+    @IBAction weak var titties: UILabel!
     
     @IBAction func shit(_ sender: UIButton) {
         print("help got")

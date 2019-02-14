@@ -38,10 +38,10 @@ class GameViewController: UIViewController {
     let fadeOut = SKAction.fadeOut(withDuration: 1.0)
     let fadeIn = SKAction.fadeIn(withDuration: 1.0)
     
-    @IBOutlet weak var damn: UILabel!
+    @IBOutlet weak var outMessage: UILabel!
     
     
-    @IBOutlet weak var titties: UILabel!
+    @IBOutlet weak var count: UILabel!
     
     
     var totalCorrect = 0
@@ -49,11 +49,9 @@ class GameViewController: UIViewController {
     @IBAction func fuck(_ sender: UIButton) {
         print("help")
         if quarterSeen {
-            thisDog.run(fadeOut)
             quarterSeen = false
         }
         else{
-            thisDog.run(fadeIn)
             quarterSeen = true
         }
         headsTails = getRando()
@@ -61,20 +59,19 @@ class GameViewController: UIViewController {
             print("Correeccccttttt")
             totalCorrect += 1
             let totalPrint = String(totalCorrect)
-            titties.text = totalPrint
-            damn.text = "It was Tails!"
+            count.text = totalPrint
+            outMessage.text = "It was Tails!"
         }
         else{
             print("You suck")
             totalCorrect = 0
             let totalPrint = String(totalCorrect)
-            titties.text = totalPrint
-            damn.text = "It was Heads!"
+            count.text = totalPrint
+            outMessage.text = "It was Heads!"
             
         }
     }
     
-    @IBAction weak var titties: UILabel!
     
     @IBAction func shit(_ sender: UIButton) {
         print("help got")
@@ -82,15 +79,15 @@ class GameViewController: UIViewController {
         if headsTails {
             totalCorrect = totalCorrect + 1
             let totalPrint = String(totalCorrect)
-            titties.text = totalPrint
-            damn.text = "It was Heads!"
+            count.text = totalPrint
+            outMessage.text = "It was Heads!"
         }
         else{
             print("You suck")
             totalCorrect = 0
             let totalPrint = String(totalCorrect)
-            titties.text = totalPrint
-            damn.text = "It was Tails!"
+            count.text = totalPrint
+            outMessage.text = "It was Tails!"
         }
     }
     
